@@ -22,7 +22,7 @@ func main() {
 	if err != nil {
 		log.Fatalf("failed to load config: %v", err)
 	}
-
+	log.Println("CORS Origin:", cfg.CORS.AllowedOrigin)
 	client, err := db.Connect(cfg.Mongo.URI, cfg.Mongo.Timeout)
 	if err != nil {
 		log.Fatalf("failed to connect to mongo: %v", err)
